@@ -31,6 +31,7 @@ export default {
 #hero {
 	color: #fff;
 	background-image: url('../assets/images/bg-1.png'), linear-gradient(to right, $purple, $blue);
+	background-attachment: fixed;
 	width: 100%;
 	height: 350px;
 

@@ -8,11 +8,6 @@
 			</li>
 			<li>
 				<a href="#">
-					Skills
-				</a>
-			</li>
-			<li>
-				<a href="#">
 					Portfolio
 				</a>
 			</li>
@@ -21,11 +16,6 @@
 			<li>
 				<a href="https://github.com/Danktuary" target="_blank" rel="noopener noreferrer">
 					GitHub
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					R&eacute;sum&eacute;
 				</a>
 			</li>
 			<li>
@@ -81,6 +71,7 @@ export default {
 			url('../assets/images/bg-1.png'),
 			linear-gradient(to right, rgba(#000, 0.25), rgba(#000, 0.25)),
 			linear-gradient(to right, $purple, $blue);
+		background-attachment: fixed;
 		position: fixed;
 		top: 0;
 		border-radius: 0 0 8px 8px;
