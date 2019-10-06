@@ -35,7 +35,7 @@ export default {
 	height: 350px;
 
 	.overlay {
-		background-color: rgba(#000, 0.5);
+		background-color: rgba(#000, 0.25);
 		display: flex;
 		justify-content: center;
 		align-items: center;
