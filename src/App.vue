@@ -23,6 +23,7 @@ export default {
 <style lang="scss">
 @import '~axios-progress-bar/dist/nprogress.css';
 @import '~aos/src/sass/aos.scss';
+@import './assets/sass/fonts.scss';
 @import './assets/sass/reset.scss';
 @import './assets/sass/variables.scss';
 
