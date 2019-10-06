@@ -2,7 +2,7 @@
 	<nav id="hero-nav" :class="{ fixed: scrolledPast }" class="container">
 		<ul class="nav-items">
 			<li>
-				<router-link :to="{ name: 'home' }">
+				<router-link :to="{ name: 'home' }" exact>
 					Home
 				</router-link>
 			</li>
