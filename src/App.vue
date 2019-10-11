@@ -76,7 +76,12 @@ a {
 	transition: all 0.25s ease-in-out;
 }
 
-.route-enter, .route-leave-to {
+.route-enter {
+	left: 1em;
+	opacity: 0;
+}
+
+.route-leave-to {
 	left: -1em;
 	opacity: 0;
 }
