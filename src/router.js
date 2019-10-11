@@ -12,5 +12,24 @@ export default new Router({
 			name: 'home',
 			component: Home,
 		},
+		{
+			path: '/portfolio',
+			// route level code-splitting
+			// this generates a separate chunk (chunkName.[hash].js) for this route
+			// which is lazy-loaded when the route is visited.
+			component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio/Index.vue'),
+			children: [
+				{
+					path: '',
+					name: 'portfolio',
+					component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio/Default.vue'),
+				},
+				{
+					path: ':project',
+					name: 'project',
+					component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio/Project.vue'),
+				},
+			],
+		},
 	],
 });

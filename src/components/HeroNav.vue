@@ -7,9 +7,9 @@
 				</router-link>
 			</li>
 			<li>
-				<a href="#">
+				<router-link :to="{ name: 'portfolio' }">
 					Portfolio
-				</a>
+				</router-link>
 			</li>
 		</ul>
 		<ul class="nav-items">
