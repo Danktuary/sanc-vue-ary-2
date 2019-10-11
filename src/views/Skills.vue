@@ -4,7 +4,8 @@
 			<tag-thumbnail
 				v-for="tag in tags"
 				:key="tag.id"
-				:tag="tag.name">
+				:tag="tag.name"
+			>
 				{{ tag.name }}
 			</tag-thumbnail>
 		</div>
