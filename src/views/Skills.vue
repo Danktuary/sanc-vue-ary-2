@@ -45,21 +45,18 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.skills-view {
-	display: flex;
-	align-items: start;
+<style lang="sass">
+.skills-view
+	display: flex
+	align-items: start
 
-	.tags-list {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		width: 25%;
-		margin-right: 1em;
-	}
+	.tags-list
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		width: 25%
+		margin-right: 1em
 
-	.skills-list {
-		flex-grow: 1;
-	}
-}
+	.skills-list
+		flex-grow: 1
 </style>

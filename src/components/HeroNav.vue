@@ -50,69 +50,58 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '../assets/sass/variables.scss';
-@import '../assets/sass/mixins.scss';
+<style lang="sass">
+@import '../assets/sass/variables'
+@import '../assets/sass/mixins'
 
-#hero-nav {
-	background-color: rgba(#000, 0.25);
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0.5em;
-	border-radius: 8px 8px 0 0;
-	box-sizing: border-box;
-	border: 1px solid rgba(#000, 0.15);
-	transition: all 0.15s ease-in-out;
+#hero-nav
+	background-color: rgba(#000, 0.25)
+	display: flex
+	justify-content: space-between
+	width: 100%
+	padding: 0.5em
+	border-radius: 8px 8px 0 0
+	box-sizing: border-box
+	border: 1px solid rgba(#000, 0.15)
+	transition: all 0.15s ease-in-out
 
-	&.fixed {
-		background-color: transparent;
-		background-image:
-			url('../assets/images/bg-1.png'),
-			linear-gradient(to right, rgba(#000, 0.25), rgba(#000, 0.25)),
-			linear-gradient(to right, $purple, $blue);
-		background-attachment: fixed;
-		position: fixed;
-		top: 0;
-		border-radius: 0 0 8px 8px;
-		z-index: 500;
-	}
+	&.fixed
+		background-color: transparent
+		background-image: url('../assets/images/bg-1.png'), linear-gradient(to right, rgba(#000, 0.25), rgba(#000, 0.25)), linear-gradient(to right, $purple, $blue)
+		background-attachment: fixed
+		position: fixed
+		top: 0
+		border-radius: 0 0 8px 8px
+		z-index: 500
 
-	.nav-items {
-		display: flex;
-		letter-spacing: 1px;
+	.nav-items
+		display: flex
+		letter-spacing: 1px
 
-		li {
-			background-color: $purple;
-			position: relative;
-			margin: 0 0.25em;
-			border-radius: 3px;
+		li
+			background-color: $purple
+			position: relative
+			margin: 0 0.25em
+			border-radius: 3px
 
-			a {
-				color: rgba(#fff, 0.75);
-				display: block;
-				font-weight: 300;
-				padding: 0.75em 1.5em;
-				border-radius: 3px;
-				box-shadow: 0 0 1px 0 rgba(#fff, 0.1);
-				transition: all 0.1s ease-in-out;
+			a
+				color: rgba(#fff, 0.75)
+				display: block
+				font-weight: 300
+				padding: 0.75em 1.5em
+				border-radius: 3px
+				box-shadow: 0 0 1px 0 rgba(#fff, 0.1)
+				transition: all 0.1s ease-in-out
 
 				&.active,
-				&:hover {
-					color: #fff;
-				}
+				&:hover
+					color: #fff
 
-				@include pulse-hover;
-			}
+				@include pulse-hover
 
-			&:first-of-type {
-				margin-left: 0;
-			}
+			&:first-of-type
+				margin-left: 0
 
-			&:last-of-type {
-				margin-right: 0;
-			}
-		}
-	}
-}
+			&:last-of-type
+				margin-right: 0
 </style>

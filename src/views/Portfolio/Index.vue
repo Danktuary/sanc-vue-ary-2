@@ -77,97 +77,80 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import '../../assets/sass/variables';
-@import '../../assets/sass/pagination.sass';
+<style lang="sass">
+@import '../../assets/sass/variables'
+@import '../../assets/sass/pagination'
 
-.portfolio-layout {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
+.portfolio-layout
+	width: 100%
+	display: flex
+	justify-content: space-between
+	flex-direction: column
 
-	.image-previews {
-		.image-thumbnails {
-			display: flex;
-			justify-content: space-around;
-			flex-wrap: wrap;
-			margin-top: 0.5em;
+	.image-previews
+		.image-thumbnails
+			display: flex
+			justify-content: space-around
+			flex-wrap: wrap
+			margin-top: 0.5em
 
-			li {
-				width: 25%;
-				padding: 0 0.5em;
-				margin-bottom: 1.5em;
-				box-sizing: border-box;
+			li
+				width: 25%
+				padding: 0 0.5em
+				margin-bottom: 1.5em
+				box-sizing: border-box
 
-				@media screen and (max-width: 768px) {
-					width: 50%;
-				}
+				@media screen and (max-width: 768px)
+					width: 50%
 
-				a {
-					display: block;
-					position: relative;
-					bottom: 0;
-					border-radius: 4px;
-					box-shadow: 1px 1px 5px 2px rgba(#000, 0.15);
-					transition: all 0.15s ease-in-out;
+				a
+					display: block
+					position: relative
+					bottom: 0
+					border-radius: 4px
+					box-shadow: 1px 1px 5px 2px rgba(#000, 0.15)
+					transition: all 0.15s ease-in-out
 
-					.image-thumbnail {
-						background-position: center;
-						background-size: cover;
-						height: 150px;
-						border-radius: 4px;
+					.image-thumbnail
+						background-position: center
+						background-size: cover
+						height: 150px
+						border-radius: 4px
 
-						@media screen and (max-width: 768px) {
-							height: 125px;
-						}
+						@media screen and (max-width: 768px)
+							height: 125px
 
-						@media screen and (max-width: 490px) {
-							height: 80px;
-						}
-					}
+						@media screen and (max-width: 490px)
+							height: 80px
 
-					.preview-name {
-						color: lighten($gray, 25%);
-						display: block;
-						padding: 0.5em 0;
-						text-align: center;
-						border-top: 1px solid rgba(#000, 0.1);
-						transition: all 0.15s ease-in-out;
-					}
+					.preview-name
+						color: lighten($gray, 25%)
+						display: block
+						padding: 0.5em 0
+						text-align: center
+						border-top: 1px solid rgba(#000, 0.1)
+						transition: all 0.15s ease-in-out
 
 					&.active,
-					&:hover {
-						box-shadow: 1px 1px 5px 3px rgba(#000, 0.2);
+					&:hover
+						box-shadow: 1px 1px 5px 3px rgba(#000, 0.2)
 
-						.preview-name {
-							border-color: rgba(#000, 0.15);
-						}
-					}
+						.preview-name
+							border-color: rgba(#000, 0.15)
 
-					&.active {
-						.preview-name {
-							color: $blue;
-							font-weight: 600;
-						}
-					}
-				}
-			}
-		}
-	}
-}
+					&.active
+						.preview-name
+							color: $blue
+							font-weight: 600
 
-.project-view-enter-active, .project-view-leave-active {
-	transition: all 0.25s ease-in-out;
-}
+.project-view-enter-active, .project-view-leave-active
+	transition: all 0.25s ease-in-out
 
-.project-view-enter {
-	opacity: 0;
-	transform: scale(1.05);
-}
+.project-view-enter
+	opacity: 0
+	transform: scale(1.05)
 
-.project-view-leave-to {
-	opacity: 0;
-	transform: scale(0.95);
-}
+.project-view-leave-to
+	opacity: 0
+	transform: scale(0.95)
 </style>
