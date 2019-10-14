@@ -3,7 +3,7 @@
 		<hero />
 		<main id="main-content" class="container">
 			<transition name="route" mode="out-in">
-				<Router-view />
+				<router-view />
 			</transition>
 		</main>
 	</div>
