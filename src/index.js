@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Photoswipe from 'vue-pswipe';
 import aos from 'aos';
 import axios from 'axios';
 import { loadProgressBar } from 'axios-progress-bar';
@@ -13,6 +14,7 @@ loadProgressBar();
 axios.defaults.baseURL = process.env.VUE_APP_API_BASE;
 
 Vue.use(VueRouter);
+Vue.use(Photoswipe, { bgOpacity: 0.75 });
 Vue.config.productionTip = false;
 
 new Vue({
