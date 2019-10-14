@@ -61,6 +61,10 @@ export default {
 	created() {
 		for (const projectsChunk of this.projects) {
 			for (const project of projectsChunk) {
+				project.images = portfolioImages
+					.filter(image => image.directory === project.directory)
+					.map(image => image.resolvedPath);
+
 				project.thumbnail = project.images.find(image => /\/index\..*\.(jpg|png)$/.test(image)) || project.images[0];
 			}
 		}
