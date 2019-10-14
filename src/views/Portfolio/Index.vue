@@ -1,11 +1,10 @@
 <template>
 	<article class="portfolio-layout">
-		<section class="image-previews">
-			<paginate
-				v-model="currentPage"
-				container-class="pagination-controls"
-				:page-count="pagesAmount"
-			/>
+		<section class="image-previews" data-aos="fade-up" data-aos-duration="500">
+			<div class="portfolio-header">
+				<h1>My Portfolio</h1>
+				<paginate v-model="currentPage" container-class="pagination-controls" :page-count="pagesAmount" />
+			</div>
 			<ul class="image-thumbnails">
 				<li v-for="project in projectsToShow" :key="project.name">
 					<router-link :to="{ name: 'project', params: { project: project.directory } }">
@@ -88,6 +87,20 @@ export default {
 	flex-direction: column
 
 	.image-previews
+		.portfolio-header
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			padding-bottom: 0.5em
+
+			h1
+				display: inline-block
+				font-weight: 700
+				font-size: 2rem
+				padding: 0 0.2em 0.2em
+				border-left: 0.25rem solid rgba($blue, 0.75)
+				border-radius: 4px
+
 		.image-thumbnails
 			display: flex
 			justify-content: space-around
