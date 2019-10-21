@@ -48,7 +48,7 @@ export default {
 			border-radius: 4px
 
 		.project-description
-			color: lighten($gray, 35%)
+			color: lighten($gray, 20%)
 			margin: 1em 0
 
 	.project-images
