@@ -34,7 +34,18 @@ function importAll(requireContext) {
 	});
 }
 
+const chunkedProjects = chunk(projects, 4);
 const portfolioImages = importAll(require.context('../../assets/images/portfolio/', true, /\.(jpg|png)$/));
+
+for (const projectsChunk of chunkedProjects) {
+	for (const project of projectsChunk) {
+		project.images = portfolioImages
+			.filter(image => image.directory === project.directory)
+			.map(image => image.resolvedPath);
+
+		project.thumbnail = project.images.find(image => /\/index\..*\.(jpg|png)$/.test(image)) || project.images[0];
+	}
+}
 
 export default {
 	name: 'Portfolio',
@@ -43,7 +54,7 @@ export default {
 	},
 	data() {
 		return {
-			projects: chunk(projects, 4),
+			projects,
 			selectedProject: {},
 			currentPage: 1,
 			pagesAmount: Math.ceil(projects.length / 4),
@@ -51,7 +62,7 @@ export default {
 	},
 	computed: {
 		projectsToShow() {
-			return this.projects[this.currentPage - 1];
+			return chunkedProjects[this.currentPage - 1];
 		},
 	},
 	beforeRouteUpdate(to, from, next) {
@@ -59,21 +70,17 @@ export default {
 		next();
 	},
 	created() {
-		for (const projectsChunk of this.projects) {
-			for (const project of projectsChunk) {
-				project.images = portfolioImages
-					.filter(image => image.directory === project.directory)
-					.map(image => image.resolvedPath);
+		const { project: projectParam } = this.$route.params;
 
-				project.thumbnail = project.images.find(image => /\/index\..*\.(jpg|png)$/.test(image)) || project.images[0];
-			}
+		if (projectParam) {
+			const index = chunkedProjects.findIndex(projectChunk => projectChunk.find(project => project.directory === projectParam));
+			this.currentPage = index + 1;
+			this.selectProject(projectParam);
 		}
-
-		this.selectProject(this.$route.params.project);
 	},
 	methods: {
 		selectProject(projectDirectory) {
-			this.selectedProject = this.projectsToShow.find(project => project.directory === projectDirectory);
+			this.selectedProject = this.projects.find(project => project.directory === projectDirectory);
 		},
 	},
 };
