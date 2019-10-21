@@ -39,6 +39,12 @@ export default {
 
 .project-container
 	.project-details
+		a
+			color: $blue
+
+			&:hover
+				color: darken($blue, 15%)
+
 		.project-title
 			display: inline-block
 			font-weight: 700
