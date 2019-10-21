@@ -5,7 +5,32 @@
 				{{ project.name }}
 			</h2>
 			<div class="project-description">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quas quos nisi cum laboriosam.
+				{{ project.description }}
+			</div>
+			<div class="project-technology">
+				<ul>
+					<li>
+						<strong>Date</strong>: {{ project.date }}
+					</li>
+					<li v-if="project.frameworks && project.frameworks.length">
+						<strong>Framework(s)</strong>: {{ project.frameworks.join(', ') }}
+					</li>
+					<li>
+						<strong>Languages</strong>: {{ project.languages.join(', ') }}
+					</li>
+					<li v-if="project.site">
+						<strong>Site</strong>:
+						<a :href="project.site" target="_blank" rel="noopener noreferrer">
+							{{ project.site }}
+						</a>
+					</li>
+					<li v-if="project.repo">
+						<strong>GitHub Repository</strong>:
+						<a :href="`https://github.com/${project.repo}`" target="_blank" rel="noopener noreferrer">
+							{{ `https://github.com/${project.repo}` }}
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<photoswipe class="project-images">
